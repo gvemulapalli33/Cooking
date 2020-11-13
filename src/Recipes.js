@@ -8,7 +8,11 @@ class Recipes {
     }
 
     getAllTags() {
-       this.tags = new set(this.recipes.map(({tags}) => tags));
+       const tags = this.recipes.reduce((acc, recipe) => {
+         return acc.concat(...recipe.tags);
+       }, []);
+       this.tags = [...new Set(tags)];
+       return this.tags;
     }
 
     searchByTag(tag) {

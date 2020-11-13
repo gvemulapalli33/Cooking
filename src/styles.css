@@ -44,15 +44,15 @@ ul {
     grid-template-columns: minmax(max-content, 300px) 1fr;
 }
 
-.recipes {
+.recipes-list, .user-favorites {
     display: grid;
     grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-gap: 1em;
 }
 
 .recipe {
     width: 100%;
-    position: relative;
-    margin: 1em;
+    padding: 1em;
 }
 
 .recipe-img {
@@ -61,14 +61,23 @@ ul {
 }
 
 .recipe-name {
-   position: absolute;
    font-size: 1.2rem;
    text-align: center;
-   top: 0;
 }
 
 .recipe-btn {
-    position: absolute;
-    bottom: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tags {
+   text-align:center;
+}
+
+.tag {
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin: 1em;
+  font-size: 1.2rem;
 }
